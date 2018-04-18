@@ -1,0 +1,21 @@
+<project name="examination_tickets" default="all" >
+
+        <target name="make.dirs" description="Make some dirs">
+       <mkdir dir="build"/>
+       <mkdir dir="build/class"/>
+        </target>
+
+        <target name="compile" description="compile java"  depends="make.dirs">
+       <javac destdir="build/class">
+      <src path="src"/>
+       </javac>
+        </target>
+
+        <target name="all" description="Do the build"  depends="compile"/>
+
+        <target name="clean" description="clean up">
+       <echo>I'm cleaning up.</echo>
+       <delete dir="build"/>
+        </target>
+
+  </project>
